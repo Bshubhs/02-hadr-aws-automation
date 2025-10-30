@@ -1,0 +1,100 @@
+########################################
+# 🔧 SPECIAL FILES (Project-specific)
+# Add any custom files/folders here
+# Example:
+# secrets.env
+# custom-config.yaml
+########################################
+
+**/Archive/
+**/Archive/**
+
+########################################
+# 🌍 GLOBAL IGNORE SECTION
+# Applies to all subdirectories recursively
+########################################
+
+# === Terraform ===
+**/.terraform/
+**/.terraform.lock.hcl
+**/terraform.tfstate
+**/terraform.tfstate.backup
+*/.tfplan
+
+# === AWS CLI / SDK ===
+**/.aws/
+**/credentials
+**/config
+
+# === Python ===
+**/_pycache_/
+*/.py[cod]
+*/.egg
+*/.egg-info/
+**/dist/
+**/build/
+**/.venv/
+**/.env
+*/.env.
+
+# === Node.js / JavaScript ===
+**/node_modules/
+*/npm-debug.log
+**/yarn-error.log
+**/.parcel-cache/
+
+# === Logs & Temp ===
+*/.log
+**/logs/
+**/tmp/
+**/temp/
+**/.DS_Store
+**/Thumbs.db
+
+# === IDE / Editor configs ===
+**/.vscode/
+**/.idea/
+*/.sublime-workspace
+*/.sublime-project
+
+# === OS / Misc ===
+**/.Trash/
+**/.AppleDouble
+**/.Spotlight-V100
+**/.DocumentRevisions-V100
+**/.fseventsd
+**/.TemporaryItems
+**/.swp
+**/.lock
+
+# === Git / Versioning ===
+**/.git/
+**/.gitignore~
+**/.gitmodules
+**/.gitattributes
+
+# === Archives / Binaries ===
+*/.zip
+*/.tar.gz
+*/.rar
+*/.7z
+*/.exe
+*/.dll
+*/.so
+*/.bin
+*/.out
+*/.class
+
+# === Docker / Containers ===
+**/.docker/
+**/Dockerfile~
+**/docker-compose.override.yml
+
+# === VS Code Workspace Cache ===
+**/.vscode-test/
+**/.history/
+
+# === System Backups ===
+*/~
+*/.bak
+*/.tmp

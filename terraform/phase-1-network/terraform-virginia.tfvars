@@ -1,0 +1,7 @@
+region        = "us-east-1"
+vpc_cidr      = "10.1.0.0/16"
+subnet_a_cidr = "10.1.1.0/24"
+subnet_b_cidr = "10.1.2.0/24"
+az_a          = "us-east-1a"
+az_b          = "us-east-1b"
+project_name  = "hadr-virginia"
