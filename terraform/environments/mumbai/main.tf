@@ -14,7 +14,7 @@ module "vpc" {
   subnet_b_cidr = "10.0.2.0/24"
   az_a          = "ap-south-1a"
   az_b          = "ap-south-1b"
-  project_name  = "hadr_mumbai"
+  project_name  = "hadr-mumbai"
 }
 
 # Exposing the module outputs at environment level
@@ -41,7 +41,36 @@ module "security-group" {
   vpc_id       = module.vpc.vpc_id
 }
 
-# Calling the Auto Scaling Group
+# Calling the ALB Module
+module "alb" {
+  source = "../../modules/alb"
+
+  project_name       = "hadr-mumbai"
+  vpc_id             = module.vpc.vpc_id
+  subnet_ids         = module.vpc.subnet_ids
+  security_group_ids = [module.security-group.security_group_id]
+
+  # Health check setting
+  target_port           = 80
+  health_check_path     = "/"
+  health_check_interval = 10
+  health_check_timeout  = 3
+  healthy_threshold     = 2
+  unhealthy_threshold   = 2
+}
+
+# ALB outputs
+output "alb_dns_name" {
+  description = "ALB DNS name - Use this URL to access application"
+  value       = "http://${module.alb.alb_dns_name}"
+}
+
+output "target_group_name" {
+  description = "Target Group Name"
+  value       = module.alb.target_group_name
+}
+
+# Calling the ASG module
 module "asg" {
   source = "../../modules/asg"
 
@@ -55,6 +84,9 @@ module "asg" {
   desired_capacity = 2
   min_size         = 1
   max_size         = 3
+
+  # Connecting ASG to ALB
+  target_group_arns = [module.alb.target_group_arn]
 }
 
 output "asg_name" {

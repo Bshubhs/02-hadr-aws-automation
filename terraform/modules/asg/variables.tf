@@ -46,3 +46,9 @@ variable "max_size" {
   type        = number
   default     = 3
 }
+
+variable "target_group_arns" {
+  description = "List of target group ARNs to attach to the ASG"
+  type        = list(string)
+  default     = [] # Empty by default (Optional attachment)
+}

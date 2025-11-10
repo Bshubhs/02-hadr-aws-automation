@@ -92,6 +92,8 @@ resource "aws_autoscaling_group" "web" {
   health_check_type         = "EC2"
   health_check_grace_period = 300 # 5 minutes for instance to become healthy
 
+  target_group_arns = var.target_group_arns # Added in phase 6 (After creation of ALB module)
+
   launch_template {
     id      = aws_launch_template.web.id
     version = "$Latest"
