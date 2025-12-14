@@ -1,0 +1,50 @@
+{
+  "alb_dns_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "http://hadr-mumbai-alb-1921255356.ap-south-1.elb.amazonaws.com"
+  },
+  "asg_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "hadr-mumbai-asg"
+  },
+  "availability_zones": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "subnet_a": "string",
+        "subnet_b": "string"
+      }
+    ],
+    "value": {
+      "subnet_a": "ap-south-1a",
+      "subnet_b": "ap-south-1b"
+    }
+  },
+  "subnet_ids": {
+    "sensitive": false,
+    "type": [
+      "tuple",
+      [
+        "string",
+        "string"
+      ]
+    ],
+    "value": [
+      "subnet-0a2fd94be2a0cd13c",
+      "subnet-0f635ea930e3114dd"
+    ]
+  },
+  "target_group_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "hadr-mumbai-tg"
+  },
+  "vpc_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "vpc-0fb9a584c4be1d0de"
+  }
+}

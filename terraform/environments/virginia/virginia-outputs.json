@@ -1,0 +1,50 @@
+{
+  "alb_dns_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "http://hadr-virginia-alb-1133300185.us-east-1.elb.amazonaws.com"
+  },
+  "asg_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "hadr-virginia-asg"
+  },
+  "availability_zones": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "subnet_a": "string",
+        "subnet_b": "string"
+      }
+    ],
+    "value": {
+      "subnet_a": "us-east-1a",
+      "subnet_b": "us-east-1b"
+    }
+  },
+  "subnet_ids": {
+    "sensitive": false,
+    "type": [
+      "tuple",
+      [
+        "string",
+        "string"
+      ]
+    ],
+    "value": [
+      "subnet-0c048693954cacda6",
+      "subnet-0a1b6383cf84cea7b"
+    ]
+  },
+  "target_group_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "hadr-virginia-tg"
+  },
+  "vpc_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "vpc-0e21ac647fd2e19b2"
+  }
+}

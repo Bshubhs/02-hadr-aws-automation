@@ -8,6 +8,8 @@
 
 **/Archive/
 **/Archive/**
+**/docs
+**/ignore
 
 ########################################
 # 🌍 GLOBAL IGNORE SECTION
@@ -20,6 +22,7 @@
 **/terraform.tfstate
 **/terraform.tfstate.backup
 */.tfplan
+**/plans
 
 # === AWS CLI / SDK ===
 **/.aws/
